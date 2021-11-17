@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -227,8 +226,18 @@ int main()
 {
    klass_PartOfaNumber PoN;
    int number;
-   cout << "Введите число :"<< endl;
+   cout << "Введите число от 0 до 9999:"<< endl;
    cin >> number;
+   for(;;)
+   {
+        if ((number < 0) || (number > 9999))
+        {
+            cout << "Вы ввели число не из числового интервала (от 0 до 9999)! Введите число: "<<endl;
+            cin >> number;
+        }
+        else 
+            break;
+   }
    Fun_PartOfaNumber (number, PoN);
     return 0; 
 }
